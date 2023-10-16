@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Manager</title>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <form method="post" action="#">
+            <div th:if="${errorMessagePasswordAndEmail}" class="errorPasswordAndEmail">
+                <p>Password or user as incorrect</p>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputUser1" class="form-label">User</label>
+                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" name="user">
+                <div id="userHelp" class="form-text">We will never share your username with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+            </div>
+            <div class="mb-3 form-register">
+                <label>You don't have an account yet? <a href="#">Register</a></label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </main>
+</body>
+</html>
