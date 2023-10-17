@@ -8,12 +8,13 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Long> {
-    public Users findByPassword(String email);
-    public Users findByUser(String user);
+    Users findByUser(String user);
 
     @Query("SELECT u.password FROM Users u WHERE u.id = :userId")
-    public String findPasswordById(@Param("userId") Long userId);
+    String findPasswordById(@Param("userId") Long userId);
 
     @Query("SELECT u.id FROM Users u WHERE u.user = :user")
-    public Long findIdByUser(@Param("user") String user);
+    Long findIdByUser(@Param("user") String user);
+
+    Users findByName(String user);
 }

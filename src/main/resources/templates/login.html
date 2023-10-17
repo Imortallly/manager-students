@@ -11,20 +11,21 @@
 <body>
     <main>
         <form method="post" action="#">
-            <div th:if="${errorMessagePasswordAndEmail}" class="errorPasswordAndEmail">
-                <p>Password or user as incorrect</p>
-            </div>
+            <div class="img-logo"><img th:src="@{/img/back-to-school.png}"/></div>
             <div class="mb-3">
                 <label for="exampleInputUser1" class="form-label">User</label>
-                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" name="user">
+                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" name="user" required>
                 <div id="userHelp" class="form-text">We will never share your username with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+            </div>
+            <div th:if="${errorMessagePasswordAndEmail}" class="errorPasswordAndEmail">
+                <p>Password or user as incorrect</p>
             </div>
             <div class="mb-3 form-register">
-                <label>You don't have an account yet? <a href="#">Register</a></label>
+                <label>You don't have an account yet? <a th:href="@{/register/}">Register</a></label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

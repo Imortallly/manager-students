@@ -1,6 +1,6 @@
 
 body {
-    background: url("/img/wallpaper.jpg");
+    background-color: #ecf1f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,12 +12,31 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35rem;
+    width: 40rem;
     height: 37rem;
-    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 form {
-    width: 30rem;
+    width: 23rem;
     height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.img-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    width: 10rem;
+}
+#exampleInputPassword1 {
+    width: 20rem;
+}
+.errorPasswordAndEmail {
+    color: red;
 }

@@ -1,7 +1,6 @@
 package br.com.gomes.manager.Service;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import br.com.gomes.manager.Model.Users;
 import br.com.gomes.manager.Repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,16 +33,5 @@ public class LoginValidationService {
     public String errorRegisterPasswordAndEmail(Model model) {
         model.addAttribute("errorMessagePasswordAndEmail", true);
         return "login";
-    }
-
-    //Somente Cadastro
-    private boolean encryptionPassword(Users user) throws Exception {
-        try {
-            String bcryptHashString = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
-            user.setPassword(bcryptHashString);
-        } catch (Exception e) {
-            throw new Exception("Erro na criptográfia");
-        }
-        return true;
     }
 }

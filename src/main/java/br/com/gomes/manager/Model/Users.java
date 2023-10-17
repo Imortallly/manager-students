@@ -14,10 +14,13 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
     private String user;
-    private String password;
     @Email
     private String email;
+    private String password;
+    @Transient
+    private String confirmPassword;
 
     public Users() {
 
