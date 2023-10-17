@@ -13,9 +13,7 @@ public class LoginValidationService {
 
     public boolean validateEmailBd(String username) {
         var getUser = usersrepository.findByUser(username);
-        if(getUser != null) {
-            System.out.println("Usuário encontrado");
-        }
+        if(getUser != null) {}
         return true;
     }
     public boolean validatePasswordBd(String username, String password){

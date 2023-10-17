@@ -29,7 +29,7 @@ public class UsersController {
     public String validationLogin(@Valid Users user, Model model) {
         String redirectURL;
         if (validateLogin.validateEmailBd(user.getUser()) && validateLogin.validatePasswordBd(user.getUser(), user.getPassword())) {
-            redirectURL = "redirect:/home";
+            redirectURL = "redirect:/home/";
         } else {
             redirectURL = validateLogin.errorRegisterPasswordAndEmail(model);
             return redirectURL;
@@ -70,4 +70,14 @@ public class UsersController {
         }
         return redirectURL;
     }
+    @GetMapping("/home/")
+    public String home() {
+        return "home";
+    }
+
+    @GetMapping("/terms/")
+    public String terms() {
+        return "terms";
+    }
+
 }

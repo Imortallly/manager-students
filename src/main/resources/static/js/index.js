@@ -1,5 +1,7 @@
-var doc = document.getElementById("loginButton");
+var elements = document.querySelectorAll("#loginButton1, #loginButton2");
 
-doc.addEventListener("click", function() {
-    window.location.href = "/login/";
+elements.forEach(function(element) {
+    element.addEventListener("click", function() {
+        window.location.href = "/login/";
+    });
 });

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Manager</title>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style-home.css}" />
+    <link rel="shortcut icon" th:href="@{/img/back-to-school.png}" href="" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <div class="box-white">
+        <div class="box-white-intern">
+            <img th:src="@{/img/back-to-school.png}"/>
+        </div>
+        <div class="limit-expand"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" id="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/home/}">🏠 Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">👤 Student registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">🔍 Student consultation</a>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="button-2" role="button" id="loginButton2">Logout</button>
+        </div>
+    </nav>
+</header>
+<main>
+
+</main>
+</body>
+<script th:src="@{/js/index.js}"></script>
+</html>

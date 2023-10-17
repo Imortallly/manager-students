@@ -1,0 +1,85 @@
+
+body {
+    background-color: #ecf1f0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.box-white {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height:10rem;
+}
+
+.box-white-intern {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height 100%;
+}
+
+.box-white img {
+    width: 20%;
+}
+
+.limit-expand {
+    width: 80%;
+    height: 100%;
+}
+
+nav {
+    height: 4rem;
+}
+
+#container-fluid {
+    padding-left: 4rem;
+}
+
+.button-2 {
+  background-color: #72c2e9;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 6rem;
+}
+
+.button-2:hover,
+.button-2:focus {
+  opacity: .75;
+}

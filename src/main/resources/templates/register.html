@@ -6,15 +6,17 @@
     <meta http-equiv="Content-Type" content="text/html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/css/style-register.css}" />
+    <link rel="shortcut icon" th:href="@{/img/back-to-school.png}" href="" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <main>
         <div class="info">
             <div class="welcome-sign">
-                <h1 class="connected-info-1">Welcome back</h1>
+                <div class="img-logo"><img th:src="@{/img/back-to-school.png}"/></div>
+                <br>
                 <h2 class="connected-info-2" id="info-connected">To stay connected with us, log in with your personal information</h2>
-                <button type="button" class="btn btn-primary btn-lg" id="loginButton">Sign-in</button>
+                <button type="button" class="btn btn-primary btn-lg" id="loginButton1">Sign-in</button>
             </div>
         </div>
         <form method="post" action="#">
@@ -49,7 +51,7 @@
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                <label class="form-check-label" for="invalidCheck2"><a th:href="@{#}">Agree to terms and conditions</a>
+                <label class="form-check-label" for="invalidCheck2"><a th:href="@{/terms/}" target="_blank">Agree to terms and conditions</a>
                 </label>
             </div>
             <br>

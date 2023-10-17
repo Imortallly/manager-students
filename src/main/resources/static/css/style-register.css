@@ -72,3 +72,12 @@ form {
     color: #e9fffd;
 }
 
+.img-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    width: 10rem;
+}
+
