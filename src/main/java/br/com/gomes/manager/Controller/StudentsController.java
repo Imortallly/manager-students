@@ -29,12 +29,10 @@ public class StudentsController {
     @PostMapping("/home/students-register/")
     public String registerStudents(Students students, Model model) {
         boolean isValidName = studentsValidationService.validationNameStudentBD(students);
-        System.out.println(isValidName);
         if(isValidName) {} else {
             return studentsValidationService.errorRegisterNameStudents(model);
         }
         String numberRegister = studentsValidationService.generatorRegisterStudent();
-        System.out.println(numberRegister);
         students.setRegistration(numberRegister);
         studentsRepository.save(students);
         return studentsValidationService.messageSaveInDataBase(model);
@@ -42,7 +40,7 @@ public class StudentsController {
 
     @GetMapping("/home/consult-students/")
     public String consultStudents() {
-        return "consult-students";
+        return "consult-pages/consult-students";
     }
 }
 

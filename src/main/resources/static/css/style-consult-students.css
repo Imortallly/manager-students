@@ -12,6 +12,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
     border-radius: 15px;
@@ -82,4 +83,235 @@ nav {
 .button-2:hover,
 .button-2:focus {
   opacity: .75;
+}
+
+.search-filters {
+    width: 90rem;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-filters div img {
+    width: 1.5rem;
+}
+
+.search-bar-box {
+    width: 29rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-results {
+    width: 90rem;
+    height: 60%;
+    border: 2px solid #dfe3e7;
+}
+
+.title-filters {
+    width: 90rem;
+    display: flex;
+    align-items: start;
+    color: #212529;
+}
+
+.hr {
+    width: 90rem;
+    background: #dee2e6;
+    height: 1px;
+}
+.hrv {
+    background-color: #dee2e6;
+    margin: 0.5rem;
+    width: 1px;
+    height: 2rem;
+}
+#searchBar {
+    width: 22rem;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+}
+
+select {
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance:none;
+   outline:0;
+   box-shadow:none;
+   background: #fff;
+   background-image: none;
+   border: 1px solid #dee2e6;
+   flex: 1;
+   padding: 0 .5em;
+   color:#000000;
+   cursor:pointer;
+   font-size: 1em;
+   font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+   display: none;
+}
+.select {
+   position: relative;
+   display: flex;
+   width: 20em;
+   height: 2.4rem;
+   line-height: 3;
+   background: #fff;
+   overflow: hidden;
+   border-radius: .29em;
+   justify-content: center;
+   align-items: center;
+   border-top: 1px solid #dee2e6;
+   border-bottom: 1px solid #dee2e6;
+   border-right: 1px solid #dee2e6;
+}
+.select::after {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #fff;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+.select:hover::after {
+   color: #23b499;
+}
+
+#format {
+    background-color: transparent;
+}
+
+.select1 {
+   position: relative;
+   display: flex;
+   width: 18em;
+   height: 2.4rem;
+   line-height: 3;
+   background: #fff;
+   overflow: hidden;
+   border-radius: .29em;
+   justify-content: center;
+   align-items: center;
+   border-top: 1px solid #dee2e6;
+   border-bottom: 1px solid #dee2e6;
+   border-right: 1px solid #dee2e6;
+}
+.select1::after {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #fff;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+.select1:hover::after {
+   color: #23b499;
+}
+
+.select2 {
+   position: relative;
+   display: flex;
+   width: 18em;
+   height: 2.4rem;
+   line-height: 3;
+   background: #fff;
+   overflow: hidden;
+   border-radius: .29em;
+   justify-content: center;
+   align-items: center;
+   border-top: 1px solid #dee2e6;
+   border-bottom: 1px solid #dee2e6;
+   border-right: 1px solid #dee2e6;
+}
+.select2::after {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #fff;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+.select2:hover::after {
+   color: #23b499;
+}
+
+.select3 {
+   position: relative;
+   display: flex;
+   width: 18em;
+   height: 2.4rem;
+   line-height: 3;
+   background: #fff;
+   overflow: hidden;
+   border-radius: .29em;
+   justify-content: center;
+   align-items: center;
+   border-top: 1px solid #dee2e6;
+   border-bottom: 1px solid #dee2e6;
+   border-right: 1px solid #dee2e6;
+}
+.select3::after {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #fff;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+.select3:hover::after {
+   color: #23b499;
+}
+.btn-1 {
+  appearance: none;
+  background-color: #72c2e9;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 7px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
 }

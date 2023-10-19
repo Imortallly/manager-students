@@ -10,4 +10,10 @@ public interface StudentsRepository extends JpaRepository<Students, Long> {
          Students findByName(String user);
 
          Students findByRegistration(String registration);
+
+         Students findByCourse(String course);
+
+         Students findByStatus(String status);
+
+         Students findByShift(String shift);
 }

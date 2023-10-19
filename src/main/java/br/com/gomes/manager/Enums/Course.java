@@ -3,6 +3,8 @@ package br.com.gomes.manager.Enums;
 import java.awt.font.TextHitInfo;
 
 public enum Course {
+
+    NONE("Select    "),
     COMPUTER_SCIENCE("Computer Science"),
     ELECTRICAL_ENGINEERING("Electrical Engineering"),
     MECHANICAL_ENGINEERING("Mechanical Engineering"),
