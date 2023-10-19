@@ -19,34 +19,34 @@
                 <button type="button" class="btn btn-primary btn-lg" id="loginButton1">Sign-in</button>
             </div>
         </div>
-        <form method="post" action="#">
+        <form method="post" action="/register/">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput0" placeholder="Your Name" name="name" required>
                 <div th:if="${errorMessageName}" class="errorPasswordAndEmail">
-                    <p>Password or user as incorrect</p>
+                    <p>Username already registered</p>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Username*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" name="user" required>
                 <div th:if="${errorMessageUsername}" class="errorPasswordAndEmail">
-                    <p>Password or user as incorrect</p>
+                    <p>This username is already in use</p>
                 </div>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address*</label>
+                <label for="exampleFormControlInput2" class="form-label">Email address*</label>
                 <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Create a password*</label>
+                <label for="exampleFormControlInput3" class="form-label">Create a password*</label>
                 <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="Password" name="password" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Confirm a password*</label>
+                <label for="exampleFormControlInput4" class="form-label">Confirm a password*</label>
                 <input type="password" class="form-control" id="exampleFormControlInput4" placeholder="Confirm" name="confirmPassword" required>
                 <div th:if="${errorMessagePasswordConfirm}" class="errorPasswordAndEmail">
-                    <p>Password or user as incorrect</p>
+                    <p>Password does not match</p>
                 </div>
             </div>
             <div class="form-check">

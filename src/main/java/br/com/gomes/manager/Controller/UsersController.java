@@ -70,14 +70,12 @@ public class UsersController {
         }
         return redirectURL;
     }
-    @GetMapping("/home/")
-    public String home() {
-        return "home";
-    }
 
     @GetMapping("/terms/")
     public String terms() {
         return "terms";
     }
+
+
 
 }

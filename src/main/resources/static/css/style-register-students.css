@@ -1,0 +1,207 @@
+
+body {
+    background-color: #ecf1f0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+#FormControlInput1 {
+    width: 20rem;
+}
+#FormControlInput2 {
+    width: 20rem;
+}
+#FormControlInput3 {
+    width: 20rem;
+}
+#FormControlInput4 {
+    width: 20rem;
+}
+#FormControlInput5 {
+    width: 20rem;
+}
+
+
+.box-white {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height:10rem;
+}
+
+.box-white-intern {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height 100%;
+}
+
+.box-white img {
+    width: 20%;
+}
+
+.limit-expand {
+    width: 80%;
+    height: 100%;
+}
+
+nav {
+    height: 4rem;
+}
+
+#container-fluid {
+    padding-left: 4rem;
+}
+
+.button-2 {
+  background-color: #72c2e9;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 6rem;
+}
+
+.button-2:hover,
+.button-2:focus {
+  opacity: .75;
+}
+form {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: 80rem;
+    height 50rem;
+}
+.hr {
+    width: 90rem;
+    background: #dee2e6;
+    height: 1px;
+}
+.title-main {
+    width: 90rem;
+    display: flex;
+    align-items: start;
+    color: #212529;
+}
+
+.btn-1 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-2 {
+  appearance: none;
+  background-color: #72c2e9;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-1 .btn-2:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-1 .btn-2:hover {
+  background-color: #2c974b;
+}
+
+.btn-1 .btn-2:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.btn-1 .btn-2:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.btn-1 .btn-2:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+.messageSave {
+    color: green;
+    font-size: 1rem;
+}
+
+.errorMessageNameMatch {
+    color: red;
+}
+
+
+
