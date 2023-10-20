@@ -43,48 +43,84 @@
     </div>
     <div class="hr"></div>
     <br>
-    <div class="search-filters">
-        <div class="search-bar-box">
-            <input type="text" class="form-control" id="searchBar" aria-describedby="search" name="search-bar" placeholder="🔍 Search">
-            <div class="select">
-                <select name="format" id="format1">
-                    <option>Select filter</option>
-                    <option value="name">Name</option>
-                    <option value="register">Register</option>
-                </select>
+    <form method="post">
+        <div class="search-filters">
+            <div class="search-bar-box">
+                <input type="text" class="form-control" id="searchBar" aria-describedby="search" name="search-bar" placeholder="🔍 Search">
+                <div class="select">
+                    <select name="format" id="format1">
+                        <option value="none">Select filter</option>
+                        <option value="name">Name</option>
+                        <option value="register">Register</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="hrv"></div>
-        <div>
-            <div class="select1">
-                <select name="format" id="format2">
-                    <option th:each="course : ${T(br.com.gomes.manager.Enums.Course).values()}"
-                            th:value="${course}" th:text="${course.getCourseName()}"></option>
-                </select>
+            <div class="hrv"></div>
+            <div>
+                <div class="select1">
+                    <select name="courses" id="format2">
+                        <option th:each="course : ${T(br.com.gomes.manager.Enums.Course).values()}"
+                                th:value="${course}" th:text="${course.getCourseName()}"></option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="select2">
-                <select name="format" id="format3">
-                    <option selected disabled>Select a Status</option>
-                    <option value="inactive">Inactive</option>
-                    <option value="active">Active</option>
-                </select>
+            <div>
+                <div class="select2">
+                    <select name="status" id="format3">
+                        <option value="none">Select a Status</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="active">Active</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="select3">
-                <select name="format" id="format4">
-                    <option selected disabled>Select a Shift</option>
-                    <option value="night">Night</option>
-                    <option value="day">Day</option>
-                </select>
+            <div>
+                <div class="select3">
+                    <select name="shift" id="format4">
+                        <option value="none">Select a Shift</option>
+                        <option value="night">Night</option>
+                        <option value="day">Day</option>
+                    </select>
+                </div>
             </div>
+            <button type="submit" class="btn-1" role="button">Search</button>
         </div>
-        <button type="submit" class="btn-1" role="button">Search</button>
-    </div>
+    </form>
     <div class="table-results">
+        <div class="content">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <th scope="col">Nome</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Matricula</th>
+                <th scope="col">Status</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Ação</th>
 
+                </thead>
+
+                <tbody>
+                <div th:if="${errorMessageConsultName}" class="messageSave">
+                    <p>Student Save!</p>
+                </div>
+                <tr scope="row" th:each="students : ${ListStudents}">
+
+                    <td th:text="${students.name}"></td>
+                    <td th:text="${students.course}"></td>
+                    <td th:text="${students.registration}"></td>
+                    <td th:text="${students.status}"></td>
+                    <td th:text="${students.shift}"></td>
+                    <td>
+<!--                        <a class="btn btn-primary" th:href="@{editar/{id}(id=${alunos.id})}">-->
+<!--                            <i class="bi bi-pencil-square"></i> Editar</a>-->
+
+<!--                        <a class="btn btn-danger" th:href="@{remover/{id}(id=${alunos.id})}">-->
+<!--                            <i class="bi bi-x-square"></i> Remover</a>-->
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </main>
 </body>

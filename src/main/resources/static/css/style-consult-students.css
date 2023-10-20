@@ -110,6 +110,7 @@ nav {
     width: 90rem;
     height: 60%;
     border: 2px solid #dfe3e7;
+    overflow: auto;
 }
 
 .title-filters {
@@ -314,4 +315,10 @@ select::-ms-expand {
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+.content {
+   overflow-y: scroll;
+   height: 100%;
+   width: 100%;
 }

@@ -5,15 +5,20 @@ import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface StudentsRepository extends JpaRepository<Students, Long> {
-         Students findByName(String user);
+         List<Students> findByNameContainingIgnoreCase(String name);
+
+         Students findByName(String name);
 
          Students findByRegistration(String registration);
+         List<Students> findAllByRegistration(String registration);
 
-         Students findByCourse(String course);
+         List<Students> findByCourse(String course);
 
-         Students findByStatus(String status);
+         List<Students> findByStatus(String status);
 
-         Students findByShift(String shift);
+         List<Students> findByShift(String shift);
 }
