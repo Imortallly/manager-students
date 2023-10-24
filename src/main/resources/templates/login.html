@@ -11,11 +11,11 @@
 </head>
 <body>
     <main>
-        <form method="post" action="/login/">
+        <form method="post" th:action="@{/login/}">
             <div class="img-logo"><img th:src="@{/img/back-to-school.png}"/></div>
             <div class="mb-3">
                 <label for="exampleInputUser1" class="form-label">User</label>
-                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" name="user" required>
+                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" name="username" required>
                 <div id="userHelp" class="form-text">We will never share your username with anyone else.</div>
             </div>
             <div class="mb-3">

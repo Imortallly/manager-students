@@ -322,3 +322,10 @@ select::-ms-expand {
    height: 100%;
    width: 100%;
 }
+
+.messageNotFoundResult {
+    height: 30%;
+    padding-top: 5rem;
+    padding-left: 43%;
+}
+

@@ -21,12 +21,16 @@ public class StudentsConsultService {
             returnURL = consultNameSearch(searchBar, model);
         } else if(!searchBar.isEmpty() && format.equals("register") && courses.equals("NONE") && status.equals("none") && shift.equals("none")) {
             returnURL = consultRegisterSearch(searchBar, model);
-        } else if (searchBar.isEmpty() && format.equals("none") && !courses.isEmpty() && status.equals("none") && shift.equals("none")) {
+        } else if(searchBar.isEmpty() && format.equals("none") && courses.equals("NONE") && status.equals("none") && shift.equals("none")) {
+            returnURL = consultAllStudents(model);
+        } else if (searchBar.isEmpty() && format.equals("none") && !courses.equals("NONE") && status.equals("none") && shift.equals("none")) {
             returnURL = consultCourseSearch(courses, model);
         } else if(searchBar.isEmpty() && format.equals("none") && courses.equals("NONE") && !status.isEmpty() && shift.equals("none"))  {
             returnURL = consultStatusSearch(status, model);
         } else if(searchBar.isEmpty() && format.equals("none") && courses.equals("NONE") && status.equals("none") && !shift.isEmpty()){
             returnURL = consultShiftSearch(shift, model);
+        } else {
+            returnURL = consultAllStudents(model);
         }
         return returnURL;
     }
@@ -35,7 +39,7 @@ public class StudentsConsultService {
         List<Students> resultConsult = studentsRepository.findByNameContainingIgnoreCase(name);
         ModelAndView modelAndView = new ModelAndView();
         if(resultConsult.isEmpty()) {
-            errorConsultNameStudents(model);
+            errorConsultEmpty(model);
         }
         modelAndView.addObject("ListStudents", resultConsult);
         modelAndView.setViewName("consult-pages/consult-students");
@@ -46,7 +50,18 @@ public class StudentsConsultService {
         List<Students> resultConsult = studentsRepository.findAllByRegistration(register);
         ModelAndView modelAndView = new ModelAndView();
         if(resultConsult.isEmpty()) {
-            errorConsultRegisterStudents(model);
+            errorConsultEmpty(model);
+        }
+        modelAndView.addObject("ListStudents", resultConsult);
+        modelAndView.setViewName("consult-pages/consult-students");
+        return modelAndView;
+    }
+
+    public ModelAndView consultAllStudents(Model model) {
+        List<Students> resultConsult = studentsRepository.findAll();
+        ModelAndView modelAndView = new ModelAndView();
+        if(resultConsult.isEmpty()) {
+            errorConsultEmpty(model);
         }
         modelAndView.addObject("ListStudents", resultConsult);
         modelAndView.setViewName("consult-pages/consult-students");
@@ -57,7 +72,7 @@ public class StudentsConsultService {
         List<Students> resultConsult = studentsRepository.findByCourse(course);
         ModelAndView modelAndView = new ModelAndView();
         if(resultConsult.isEmpty()) {
-            consultReturnCourse(model);
+            errorConsultEmpty(model);
         }
         modelAndView.addObject("ListStudents", resultConsult);
         modelAndView.setViewName("consult-pages/consult-students");
@@ -67,7 +82,7 @@ public class StudentsConsultService {
         List<Students> resultConsult = studentsRepository.findByStatus(status);
         ModelAndView modelAndView = new ModelAndView();
         if(resultConsult.isEmpty()) {
-            consultReturnStatus(model);
+            errorConsultEmpty(model);
         }
         modelAndView.addObject("ListStudents", resultConsult);
         modelAndView.setViewName("consult-pages/consult-students");
@@ -78,35 +93,22 @@ public class StudentsConsultService {
         List<Students> resultConsult = studentsRepository.findByShift(shift);
         ModelAndView modelAndView = new ModelAndView();
         if(resultConsult.isEmpty()) {
-            consultReturnShift(model);
+            errorConsultEmpty(model);
         }
         modelAndView.addObject("ListStudents", resultConsult);
         modelAndView.setViewName("consult-pages/consult-students");
         return modelAndView;
     }
 
-    public String errorConsultNameStudents(Model model) {
-        model.addAttribute("errorMessageConsultName", true);
+
+    public String errorConsultEmpty(Model model) {
+        model.addAttribute("errorMessageConsult", true);
         return "consult-pages/consult-students";
     }
-    public String errorConsultRegisterStudents(Model model) {
-        model.addAttribute("errorMessageConsultRegister", true);
+    public String saveUpdate(Model model) {
+        model.addAttribute("saveStudent", true);
         return "consult-pages/consult-students";
     }
 
-    public String consultReturnCourse(Model model) {
-        model.addAttribute("errorMessageConsultCourse", true);
-        return "consult-pages/consult-students";
-    }
-
-    public String consultReturnStatus(Model model) {
-        model.addAttribute("errorMessageConsultStatus", true);
-        return "consult-pages/consult-students";
-    }
-
-    public String consultReturnShift(Model model) {
-        model.addAttribute("errorMessageConsultShift", true);
-        return "consult-pages/consult-students";
-    }
 
 }

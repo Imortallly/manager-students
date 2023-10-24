@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Register | Manager</title>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style-register-students.css}" />
+    <link rel="shortcut icon" th:href="@{/img/back-to-school.png}" href="" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <div class="box-white">
+        <div class="box-white-intern">
+            <img th:src="@{/img/back-to-school.png}"/>
+        </div>
+        <div class="limit-expand"></div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" id="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/home/}">🏠 Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/home/students-register/}">👤 Student registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/home/consult-students/}">🔍 Student consultation</a>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="button-2" role="button" id="loginButton2">Logout</button>
+        </div>
+    </nav>
+</header>
+<main>
+    <br>
+    <div class="title-main">
+        <h2>Update register of Student</h2>
+    </div>
+    <div class="hr"></div>
+    <br><br>
+    <form method="post" action="/home/consult-students/edit-register-students/" id="form" th:object="${students}">
+        <div class="mb-3">
+            <label for="FormControlInput1" class="form-label">Student's name:</label>
+            <input readonly type="text" class="form-control" id="FormControlInput1" placeholder="Name of Student" th:field="*{name}" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="FormControlInput2" class="form-label">Select Course:</label>
+            <select class="form-select" aria-label="Default select example" id="FormControlInput2" th:field="*{course}" name="course" required>
+                <option th:each="course : ${T(br.com.gomes.manager.Enums.Course).values()}"
+                        th:value="${course}" th:text="${course.getCourseName()}"></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="FormControlInput3" class="form-label">Registration:</label>
+            <input type="text" readonly class="form-control" id="FormControlInput3" th:field="*{registration}" name="registration" >
+            <input type="text" hidden="hidden" class="form-control" id="FormControlInput6" th:field="*{id}" name="id" >
+        </div>
+        <div class="mb-3">
+            <label for="FormControlInput4" class="form-label">Select shift:</label>
+            <select class="form-select" aria-label="Default select example" id="FormControlInput4" th:field="*{shift}" name="shift"required>
+                <option value="none" selected>-</option>
+                <option value="Night">Night</option>
+                <option value="Day">Day</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="FormControlInput5" class="form-label">Select status:</label>
+            <select class="form-select" aria-label="Default select example" id="FormControlInput5" th:field="*{status}" name="status" required>
+                <option value="none" selected>-</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+        <br>
+        <div th:if="${messageSaveInDataBase}" class="messageSave">
+            <p>Student Save!</p>
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn-1" role="button">Save</button>
+            <button type="button" class="btn-2" role="button" id="backToHome">Back</button>
+        </div>
+    </form>
+</main>
+</body>
+<script th:src="@{/js/index.js}"></script>
+</html>

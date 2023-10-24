@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Long> {
+
+
     Users findByUser(String user);
 
     @Query("SELECT u.password FROM Users u WHERE u.id = :userId")

@@ -89,37 +89,41 @@
         <div class="content">
             <table class="table table-bordered table-hover">
                 <thead>
-                <th scope="col">Nome</th>
-                <th scope="col">Curso</th>
-                <th scope="col">Matricula</th>
+                <th scope="col">Name</th>
+                <th scope="col">Course</th>
+                <th scope="col">Register</th>
                 <th scope="col">Status</th>
-                <th scope="col">Turno</th>
-                <th scope="col">Ação</th>
+                <th scope="col">Shift</th>
+                <th scope="col">Action</th>
 
                 </thead>
-
                 <tbody>
-                <div th:if="${errorMessageConsultName}" class="messageSave">
-                    <p>Student Save!</p>
-                </div>
                 <tr scope="row" th:each="students : ${ListStudents}">
-
                     <td th:text="${students.name}"></td>
                     <td th:text="${students.course}"></td>
                     <td th:text="${students.registration}"></td>
                     <td th:text="${students.status}"></td>
                     <td th:text="${students.shift}"></td>
                     <td>
-<!--                        <a class="btn btn-primary" th:href="@{editar/{id}(id=${alunos.id})}">-->
-<!--                            <i class="bi bi-pencil-square"></i> Editar</a>-->
-
-<!--                        <a class="btn btn-danger" th:href="@{remover/{id}(id=${alunos.id})}">-->
-<!--                            <i class="bi bi-x-square"></i> Remover</a>-->
-
+                       <a class="btn btn-primary" th:href="@{/home/consult-students/edit-register-students/{id}(id=${students.id})}">
+                            <i class="bi bi-pencil-square"></i>Update</a>
+                        <a class="btn btn-danger" th:href="@{/home/consult-students/remove/{id}(id=${students.id})}">
+                            <i class="bi bi-x-square"></i>Remove</a>
+                        <a class="btn btn-primary" th:href="@{/home/consult-students/detais-students/{id}(id=${students.id})}">
+                            <i class="bi bi-pencil-square"></i>Details</a>
                     </td>
                 </tr>
                 </tbody>
             </table>
+            <div th:if="${errorMessageConsult}" class="messageNotFoundResult">
+                <h2>Not Found Results</h2>
+            </div>
+            <div th:if="${errorMessageDelete}" class="messageNotFoundResult">
+                <h2>Students delete Sucess!</h2>
+            </div>
+            <div th:if="${saveStudent}" class="messageNotFoundResult">
+                <h2>Student Update</h2>
+            </div>
         </div>
     </div>
 </main>

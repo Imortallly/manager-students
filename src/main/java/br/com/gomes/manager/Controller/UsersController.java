@@ -26,15 +26,12 @@ public class UsersController {
     }
 
     @PostMapping("/login/")
-    public String validationLogin(@Valid Users user, Model model) {
-        String redirectURL;
+    public String validationLogin(@Valid Users user, Model model) throws Exception {
         if (validateLogin.validateEmailBd(user.getUser()) && validateLogin.validatePasswordBd(user.getUser(), user.getPassword())) {
-            redirectURL = "redirect:/home/";
+            return "redirect:/home/";
         } else {
-            redirectURL = validateLogin.errorRegisterPasswordAndEmail(model);
-            return redirectURL;
+            throw new Exception("Erroo");
         }
-        return redirectURL;
     }
     @GetMapping("/register/")
     public String register() {

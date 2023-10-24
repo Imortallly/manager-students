@@ -2,7 +2,7 @@ var elements = document.querySelectorAll("#loginButton1, #loginButton2");
 var elementsOfRegister = document.querySelectorAll("#backToHome");
 
 function redirecionarParaLogin() {
-    window.location.href = "/login/";
+    window.location.href = "/logout/";
 }
 
 elements.forEach(function(element) {
