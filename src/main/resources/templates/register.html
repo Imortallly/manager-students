@@ -19,18 +19,18 @@
                 <button type="button" class="btn btn-primary btn-lg" id="loginButton1">Sign-in</button>
             </div>
         </div>
-        <form method="post" action="/register/">
+        <form method="post" th:action="@{/register/}">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput0" placeholder="Your Name" name="name" required>
-                <div th:if="${errorMessageName}" class="errorPasswordAndEmail">
+                <div th:if="${errorMessageName}" class="errorRegister">
                     <p>Username already registered</p>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Username*</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" name="user" required>
-                <div th:if="${errorMessageUsername}" class="errorPasswordAndEmail">
+                <div th:if="${errorMessageUsername}" class="errorRegister">
                     <p>This username is already in use</p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput4" class="form-label">Confirm a password*</label>
                 <input type="password" class="form-control" id="exampleFormControlInput4" placeholder="Confirm" name="confirmPassword" required>
-                <div th:if="${errorMessagePasswordConfirm}" class="errorPasswordAndEmail">
+                <div th:if="${errorMessagePasswordConfirm}" class="errorRegister">
                     <p>Password does not match</p>
                 </div>
             </div>

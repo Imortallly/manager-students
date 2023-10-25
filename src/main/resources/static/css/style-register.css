@@ -81,3 +81,9 @@ img {
     width: 10rem;
 }
 
+.errorRegister {
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+

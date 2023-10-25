@@ -30,12 +30,27 @@ main {
 
 .grid {
     width: 20rem;
-    height: 15rem;
+    height: 13rem;
 }
 
 .title {
-    width: 100%;
+    width: 90%;
     height: 4rem;
+}
+#backToConsult {
+    width: 10%;
+    height: 2rem;
+    border-radius: 6px;
+    background-color: #72c2e9;
+    border: 1px solid #65aacb;
+    color: white;
+    font-weight: bold;
+}
+
+.top-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 

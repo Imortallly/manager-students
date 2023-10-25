@@ -2,7 +2,6 @@ package br.com.gomes.manager.Controller;
 
 import br.com.gomes.manager.Model.Users;
 import br.com.gomes.manager.Repository.UsersRepository;
-import br.com.gomes.manager.Service.LoginValidationService;
 import br.com.gomes.manager.Service.RegisterValidationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UsersController {
     @Autowired
     private UsersRepository usersRepository;
-    @Autowired
-    private LoginValidationService validateLogin;
+
     @Autowired
     private RegisterValidationService validateRegister;
 
@@ -25,14 +23,6 @@ public class UsersController {
         return "login";
     }
 
-    @PostMapping("/login/")
-    public String validationLogin(@Valid Users user, Model model) throws Exception {
-        if (validateLogin.validateEmailBd(user.getUser()) && validateLogin.validatePasswordBd(user.getUser(), user.getPassword())) {
-            return "redirect:/home/";
-        } else {
-            throw new Exception("Erroo");
-        }
-    }
     @GetMapping("/register/")
     public String register() {
         return "register";

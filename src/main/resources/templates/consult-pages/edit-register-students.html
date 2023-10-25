@@ -43,7 +43,7 @@
     </div>
     <div class="hr"></div>
     <br><br>
-    <form method="post" action="/home/consult-students/edit-register-students/" id="form" th:object="${students}">
+    <form method="post" th:action="@{/home/consult-students/edit-register-students/}" id="form" th:object="${students}">
         <div class="mb-3">
             <label for="FormControlInput1" class="form-label">Student's name:</label>
             <input readonly type="text" class="form-control" id="FormControlInput1" placeholder="Name of Student" th:field="*{name}" name="name" required>

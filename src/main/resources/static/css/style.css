@@ -37,6 +37,7 @@ img {
 #exampleInputPassword1 {
     width: 20rem;
 }
-.errorPasswordAndEmail {
+#error-message {
     color: red;
 }
+

@@ -22,7 +22,7 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
             </div>
-            <div th:if="${errorMessagePasswordAndEmail}" class="errorPasswordAndEmail">
+            <div id="error-message" style="display: none;">
                 <p>Password or user as incorrect</p>
             </div>
             <div class="mb-3 form-register">
@@ -32,4 +32,5 @@
         </form>
     </main>
 </body>
+<script th:src="@{/js/login.js}"></script>
 </html>

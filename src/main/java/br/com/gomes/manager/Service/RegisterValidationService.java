@@ -43,7 +43,7 @@ public class RegisterValidationService {
             String bcryptHashString = BCrypt.withDefaults().hashToString(12, user.getPassword().toCharArray());
             user.setPassword(bcryptHashString);
         } catch (Exception e) {
-            throw new Exception("Erro na criptográfia");
+            throw new Exception("Encryption error");
         }
         return true;
     }

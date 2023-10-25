@@ -28,7 +28,7 @@
                         <a class="nav-link" th:href="@{/home/students-register/}">👤 Student registration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">🔍 Student consultation</a>
+                        <a class="nav-link" th:href="@{/home/consult-students/}">🔍 Student consultation</a>
                     </li>
                 </ul>
             </div>
@@ -43,7 +43,7 @@
     </div>
     <div class="hr"></div>
     <br>
-    <form method="post">
+    <form method="post" th:action="@{/home/consult-students/}">
         <div class="search-filters">
             <div class="search-bar-box">
                 <input type="text" class="form-control" id="searchBar" aria-describedby="search" name="search-bar" placeholder="🔍 Search">

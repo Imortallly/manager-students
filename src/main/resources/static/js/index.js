@@ -1,5 +1,6 @@
 var elements = document.querySelectorAll("#loginButton1, #loginButton2");
 var elementsOfRegister = document.querySelectorAll("#backToHome");
+var elementsOfConsult = document.querySelectorAll("#backToConsult");
 
 function redirecionarParaLogin() {
     window.location.href = "/logout/";
@@ -16,4 +17,14 @@ function redirecionarParaHome() {
 elementsOfRegister.forEach(function(element) {
     element.addEventListener("click", redirecionarParaHome);
 });
+
+function redirecionarParaConsulta() {
+    window.location.href = "/home/consult-students/";
+}
+
+elementsOfConsult.forEach(function(element) {
+    element.addEventListener("click", redirecionarParaConsulta);
+});
+
+
 
